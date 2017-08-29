@@ -209,6 +209,11 @@ describe("Trello", function () {
 
         request.get = method;
       });
+
+      it("should return a promise", function () {
+        const promise = this.trello.request("VERB", "/test");
+        promise.should.be.Promise();
+      });
     });
   });
 });
