@@ -35,6 +35,10 @@ t.get("/1/members/me", { cards: "open" }, function(err, data) {
   if (err) throw err;
   console.log(data);
 });
+
+// Use it as a promise
+t.get("/1/members/me", { cards: "open" })
+  .then(function(data) { console.log(data); });
 ```
 
 ### Uploading attachments to a card
